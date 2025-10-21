@@ -1,0 +1,6 @@
+[
+  { "name": "Primary Vault A", "chain": "EVM", "address": "0x12...A9", "balanceUSD": 1250000 },
+  { "name": "Custody B", "chain": "EVM", "address": "0x45...2F", "balanceUSD": 820000 },
+  { "name": "Gold Tokens", "chain": "EVM", "address": "0x9F...D4", "balanceUSD": 260000 }
+]
+
