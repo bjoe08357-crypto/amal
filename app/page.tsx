@@ -18,7 +18,7 @@ export default function Home() {
           <div className="part" style={p1} />
           <div className="part" style={p2} />
           <div className="part" style={p3} />
-          <Image src="/amal-logo.png" alt="Amal" width={40} height={40} className="mx-auto mb-4" />
+          {/* logo removed per request */}
           <h1 className="h1 gradient-text">Transparent, Stable & Sustainable Giving.</h1>
           <p className="mt-4 text-[#0F172A]/70">
             AMAL is a next-generation donations platform that represents contributions as a stable value, pairs them with transparent reserves, and releases funds by milestones—so donors see what happens next and NGOs plan with confidence.
