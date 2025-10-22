@@ -10,7 +10,14 @@ const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-jakart
 export const metadata: Metadata = {
   title: "AMAL — Your Platform for Kindness",
   description: "Transparent, stable and sustainable giving.",
-  icons: { icon: "/amal-logo.png" },
+  icons: {
+    icon: [
+      { url: "/amal-logo.png", type: "image/png", sizes: "32x32" },
+      { url: "/amal-logo.png", type: "image/png", sizes: "192x192" },
+      { url: "/amal-logo.png", rel: "shortcut icon" },
+    ],
+    apple: "/amal-logo.png",
+  },
 };
 
 export default function RootLayout({
