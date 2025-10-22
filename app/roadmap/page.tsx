@@ -2,34 +2,40 @@ import Section from '@/components/Section'
 import PageHeader from '@/components/PageHeader'
 import { Map } from 'lucide-react'
 import Timeline from '@/components/Timeline'
-import kpis from '@/data/kpis.json'
 
-export const metadata = { title: 'Roadmap — AMAL', description: 'Phases to launch and scale' }
+export const metadata = { title: 'Roadmap — AMAL', description: 'From launch to global scale — our journey mapped.' }
 
 export default function Page() {
+  const items = [
+    { title: 'Phase 1 — Foundation', time: 'Q4 2025', description: 'Complete platform beta: swap interface, donation portal, escrow smart contracts. Pilot campaigns with NGOs in Indonesia. First audit and reserve attestation.' },
+    { title: 'Phase 2 — Expansion & Governance', time: 'Q1 2026', description: 'Integrate fiat on/off‑ramps. Launch governance token and initial DAO. Partner with major NGOs and fintechs.' },
+    { title: 'Phase 3 — Global Rollout', time: 'Q2 2026', description: 'Multi‑regional launch (SEA & Africa). Listings and mobile wallet integration. Referral and matching campaigns.' },
+    { title: 'Phase 4 — Ecosystem Growth', time: 'Q3 2026', description: 'Merchant and voucher payments. Cross‑chain expansion. Tokenised impact assets (community bonds, micro‑projects).' },
+    { title: 'Phase 5 — Vision Realised', time: 'Q4 2026+', description: 'Fully decentralised DAO governs reserves and treasury. Global humanitarian network built on AMAL. New interoperable modules for social finance.' },
+  ]
+
   return (
     <>
-      <PageHeader title="Roadmap" kicker="Plan" icon={<Map className="w-3.5 h-3.5" />} description={<>Phases to launch and scale with measurable KPIs.</>} />
-      <Section>
-        <div className="grid md:grid-cols-2 gap-6 mt-6 max-w-5xl mx-auto">
-          <div className="card p-5">
-            <h2 className="h2">Phases</h2>
-            <Timeline
-              items={[
-                { title: 'Phase 1 — Indonesia Pilot', description: 'Leverage the world’s #1 giving culture; partner with mosques and schools for high‑impact campaigns (50 pilots, 5–10K donors).' },
-                { title: 'Phase 2 — Crypto & Mobile Outreach', description: 'List AMAL on select DEX/CEX, add fiat on‑ramps (Stripe, local wallets), and expand through Web3 communities.' },
-                { title: 'Phase 3 — Regional & Global Scale', description: 'Localize for Southeast Asia, onboard global NGOs, and launch matching programs that boost donations by ≈ 50%.' },
-              ]}
-            />
+      <PageHeader
+        title="From launch to global scale — our journey mapped."
+        kicker="Roadmap"
+        icon={<Map className="w-3.5 h-3.5" />}
+        description={<>Here’s a detailed look at AMAL’s path ahead. Each milestone brings transparent, stable, and sustainable giving closer to reality.</>}
+      />
+
+      <Section narrow>
+        <div className="card p-6">
+          <h2 className="h2">Phases</h2>
+          <div className="mt-4">
+            <Timeline items={items} />
           </div>
-          <div className="card p-5">
-            <h2 className="h2">KPIs</h2>
-            <ul className="mt-3 space-y-2 text-sm text-[#0F172A]/80">
-              <li>≥ {kpis.mobileDonationShare}% mobile donation share</li>
-              <li>≥ {kpis.repeatDonorRetention}% repeat donor retention</li>
-              <li>{kpis.tokenUtilityVolume}% of volume via AMAL token utility</li>
-            </ul>
-          </div>
+        </div>
+      </Section>
+
+      <Section narrow>
+        <div className="card p-6">
+          <h2 className="h2">Why These Phases Matter</h2>
+          <p className="mt-2 text-[#0F172A]/80">Each phase scales both capability and trust — moving from proof‑of‑concept in a domestic market to a globally accessible giving network governed by its users.</p>
         </div>
       </Section>
     </>
