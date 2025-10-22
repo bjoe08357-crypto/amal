@@ -28,21 +28,21 @@ export default function SiteFooter() {
           </div>
         </div>
         <div className="md:col-span-3">
-          <p className="font-semibold mb-2">Newsletter</p>
-          <form className="flex gap-2">
-            <input type="email" placeholder="Email" className="w-full rounded-md border border-[var(--border)] px-3 py-2" />
-            <button className="rounded-md px-3 py-2" style={{ background: '#B9D28E' }}>Subscribe</button>
-          </form>
-          <p className="mt-2 text-xs text-[#0F172A]/60">No spam. Unsubscribe anytime.</p>
+          <p className="font-semibold mb-2">Links</p>
+          <ul className="space-y-1">
+            <li><a className="hover:underline" href="https://x.com/Amalcoinx" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+            <li><a className="hover:underline" href="https://discord.gg/mqSBbTRf" target="_blank" rel="noopener noreferrer">Discord</a></li>
+            <li><a className="hover:underline" href="https://amalcoin.gitbook.io/amal-coin/" target="_blank" rel="noopener noreferrer">Whitepaper</a></li>
+          </ul>
         </div>
       </div>
       <div className="border-t border-[var(--border)] py-4 text-xs text-[#0F172A]/60">
         <div className="container mx-auto px-4 flex items-center justify-between">
           <span>© {new Date().getFullYear()} AMAL</span>
           <div className="flex gap-4">
-            <Link href="/privacy">Privacy</Link>
-            <Link href="/terms">Terms</Link>
-            <Link href="/disclosures">Disclosures</Link>
+            <a href="https://x.com/Amalcoinx" target="_blank" rel="noopener noreferrer">Twitter</a>
+            <a href="https://discord.gg/mqSBbTRf" target="_blank" rel="noopener noreferrer">Discord</a>
+            <a href="https://amalcoin.gitbook.io/amal-coin/" target="_blank" rel="noopener noreferrer">Whitepaper</a>
           </div>
         </div>
       </div>

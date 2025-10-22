@@ -12,6 +12,7 @@ const nav = [
   { href: '/donors', label: 'Donors' },
   { href: '/ngos', label: 'NGOs' },
   { href: '/faq', label: 'FAQ' },
+  { href: 'https://amalcoin.gitbook.io/amal-coin/', label: 'Whitepaper' },
   { href: '/contact', label: 'Contact' },
 ]
 
