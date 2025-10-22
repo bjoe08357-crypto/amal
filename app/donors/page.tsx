@@ -1,6 +1,6 @@
 import Section from '@/components/Section'
 import PageHeader from '@/components/PageHeader'
-import { Heart, Eye, Coins, ShieldCheck, BadgeCheck } from 'lucide-react'
+import { Heart } from 'lucide-react'
 
 export const metadata = { title: 'Donors — AMAL', description: 'Your generosity deserves proof.' }
 
