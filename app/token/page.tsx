@@ -1,8 +1,32 @@
+"use client"
 import Section from '@/components/Section'
 import PageHeader from '@/components/PageHeader'
-import { Coins } from 'lucide-react'
+import { Coins, Copy } from 'lucide-react'
+import { useState } from 'react'
 
 export const metadata = { title: 'Token — AMAL', description: 'ERC‑20 utility, governance, and allocation' }
+
+function CopyableAddress({ address }: { address: string }) {
+  const [copied, setCopied] = useState(false)
+  const short = address.length > 20 ? `${address.slice(0, 10)}…${address.slice(-6)}` : address
+  async function onCopy() {
+    try {
+      await navigator.clipboard.writeText(address)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 1200)
+    } catch {}
+  }
+  return (
+    <button onClick={onCopy} className="w-full text-left">
+      <div className="flex items-center justify-between gap-3">
+        <span className="font-semibold break-all sm:break-normal">{short}</span>
+        <span className="inline-flex items-center gap-1 text-xs text-[#0F172A]/60">
+          <Copy className="w-3.5 h-3.5" /> {copied ? 'Copied' : 'Copy'}
+        </span>
+      </div>
+    </button>
+  )
+}
 
 export default function Page() {
   const allocation = [
@@ -21,8 +45,8 @@ export default function Page() {
     { label: 'Symbol', value: '$AMAL' },
     { label: 'Contract', value: '0x9B132c3f9fcAbf71B83e795e6730D1d8595555EE' },
     { label: 'Network', value: 'Ethereum (ERC‑20)' },
-    { label: 'Total Supply', value: '100,000,000' },
-    { label: 'Initial Price', value: '$0.10 USD' },
+    { label: 'Total Supply', value: '200,000,000' },
+    { label: 'Initial Price', value: 'TBD' },
   ]
 
   const utility = [
@@ -47,7 +71,11 @@ export default function Page() {
           {details.map(d => (
             <div key={d.label} className="card p-5">
               <div className="text-xs text-[#0F172A]/60">{d.label}</div>
-              <div className="font-semibold">{d.value}</div>
+              {d.label === 'Contract' ? (
+                <CopyableAddress address={d.value} />
+              ) : (
+                <div className="font-semibold">{d.value}</div>
+              )}
             </div>
           ))}
         </div>

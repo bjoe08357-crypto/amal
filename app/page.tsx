@@ -90,7 +90,7 @@ export default function Home() {
           <p className="mt-3 text-[#0F172A]/80">Our token drives every part of the ecosystem: donations, rewards, staking and governance.</p>
           <div className="mt-4 grid gap-3 max-w-2xl mx-auto text-left">
             <div className="card p-5">Network: Ethereum (ERC‑20)</div>
-            <div className="card p-5">Total Supply: 100 million tokens</div>
+            <div className="card p-5">Total Supply: 200 million tokens</div>
             <div className="card p-5">Utility: Donate, stake, vote, earn</div>
           </div>
           <div className="mt-5"><Link href="/token" className="btn-outline">Tokenomics Details</Link></div>
