@@ -10,6 +10,7 @@ export default function SiteFooter() {
           <div className="flex items-center gap-6">
             <a className="hover:underline" href="https://x.com/Amalcoinx" target="_blank" rel="noopener noreferrer">Twitter</a>
             <a className="hover:underline" href="https://discord.gg/mqSBbTRf" target="_blank" rel="noopener noreferrer">Discord</a>
+            <a className="hover:underline" href="https://amalcoin.gitbook.io/amal-coin/" target="_blank" rel="noopener noreferrer">Whitepaper</a>
           </div>
         </div>
       </div>

@@ -19,7 +19,7 @@ export default function Home() {
             Join a new era of philanthropic impact. With $AMAL on Ethereum, every donation is traceable, every contributor is rewarded, and every project delivers verified change.
           </p>
           <div className="mt-6 flex items-center justify-center gap-3">
-            <Link href="/donors" className="btn-primary">Explore $AMAL</Link>
+            <Link href="/token" className="btn-primary">Explore $AMAL</Link>
             <Link href="/how-it-works" className="btn-outline">Learn How It Works</Link>
           </div>
         </div>
