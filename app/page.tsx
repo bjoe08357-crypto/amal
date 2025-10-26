@@ -19,7 +19,7 @@ export default function Home() {
             Join a new era of philanthropic impact. With $AMAL on Ethereum, every donation is traceable, every contributor is rewarded, and every project delivers verified change.
           </p>
           <div className="mt-6 flex items-center justify-center gap-3">
-            <Link href="/donors" className="btn-primary">Explore Campaigns</Link>
+            <Link href="/donors" className="btn-primary">Explore $AMAL</Link>
             <Link href="/how-it-works" className="btn-outline">Learn How It Works</Link>
           </div>
         </div>
@@ -103,8 +103,8 @@ export default function Home() {
           <h2 className="h2">Ready to Make a Real Difference?</h2>
           <p className="mt-3 text-[#0F172A]/80">Join the AMAL community today. Whether you’re a donor, a partner NGO or a supporter of transparent impact — your contribution matters.</p>
           <div className="mt-5 flex items-center justify-center gap-3">
-            <Link href="/donors" className="btn-primary">Donate Now</Link>
-            <Link href="/contact" className="btn-outline">Join Our Community</Link>
+            <a href="https://x.com/Amalcoinx" target="_blank" rel="noopener noreferrer" className="btn-outline">Twitter</a>
+            <a href="https://discord.gg/mqSBbTRf" target="_blank" rel="noopener noreferrer" className="btn-outline">Discord</a>
           </div>
         </div>
       </section>
