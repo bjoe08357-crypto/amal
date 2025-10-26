@@ -31,14 +31,41 @@ export default function SiteHeader() {
           <span className="font-semibold">AMAL</span>
         </Link>
         <nav className="hidden lg:flex items-center gap-6 text-sm">
-          {nav.map(i => (<Link key={i.href} href={i.href} className="px-2 py-1 rounded-md hover:bg-[var(--surface)]">{i.label}</Link>))}
+          {nav.map(i => {
+            const isExternal = i.href.startsWith('http');
+            return (
+              <Link
+                key={i.href}
+                href={i.href}
+                className="px-2 py-1 rounded-md hover:bg-[var(--surface)]"
+                target={isExternal ? '_blank' : undefined}
+                rel={isExternal ? 'noopener noreferrer' : undefined}
+              >
+                {i.label}
+              </Link>
+            )
+          })}
         </nav>
         <button className="lg:hidden px-3 py-2" onClick={() => setOpen(v => !v)} aria-label="Menu">☰</button>
       </div>
       {open && (
         <div className="lg:hidden border-t border-[var(--border)] bg-white">
           <div className="container mx-auto px-4 py-3 grid grid-cols-2 gap-2 text-sm">
-            {nav.map(i => (<Link key={i.href} href={i.href} className="px-3 py-2 rounded-md hover:bg-[var(--surface)]" onClick={() => setOpen(false)}>{i.label}</Link>))}
+            {nav.map(i => {
+              const isExternal = i.href.startsWith('http');
+              return (
+                <Link
+                  key={i.href}
+                  href={i.href}
+                  className="px-3 py-2 rounded-md hover:bg-[var(--surface)]"
+                  onClick={() => setOpen(false)}
+                  target={isExternal ? '_blank' : undefined}
+                  rel={isExternal ? 'noopener noreferrer' : undefined}
+                >
+                  {i.label}
+                </Link>
+              )
+            })}
           </div>
         </div>
       )}

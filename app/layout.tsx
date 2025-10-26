@@ -12,11 +12,11 @@ export const metadata: Metadata = {
   description: "Transparent, stable and sustainable giving.",
   icons: {
     icon: [
-      { url: "/amal-logo.png", type: "image/png", sizes: "32x32" },
-      { url: "/amal-logo.png", type: "image/png", sizes: "192x192" },
-      { url: "/amal-logo.png", rel: "shortcut icon" },
+      { url: "/icon.png" },
+      { url: "/amalfavicon.png", type: "image/png", sizes: "32x32" },
+      { url: "/amalfavicon.png", type: "image/png", sizes: "192x192" },
     ],
-    apple: "/amal-logo.png",
+    apple: "/apple-icon.png",
   },
 };
 
