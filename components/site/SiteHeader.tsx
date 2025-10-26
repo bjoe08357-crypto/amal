@@ -3,15 +3,22 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 
-const nav = [
+type NavItem = { href: string, label: string, children?: Array<{ href: string, label: string }> }
+
+const nav: NavItem[] = [
   { href: '/about', label: 'About' },
   { href: '/token', label: 'Token' },
   { href: '/app', label: 'App' },
-  { href: '/how-it-works', label: 'How It Works' },
+  {
+    href: '/how-it-works',
+    label: 'How It Works',
+    children: [
+      { href: '/donors', label: 'Donors' },
+      { href: '/ngos', label: 'NGOs' },
+      { href: '/faq', label: 'FAQ' },
+    ],
+  },
   { href: '/roadmap', label: 'Roadmap' },
-  { href: '/donors', label: 'Donors' },
-  { href: '/ngos', label: 'NGOs' },
-  { href: '/faq', label: 'FAQ' },
   { href: 'https://amalcoin.gitbook.io/amal-coin/', label: 'Whitepaper' },
   { href: '/contact', label: 'Contact' },
 ]
@@ -33,6 +40,20 @@ export default function SiteHeader() {
         <nav className="hidden lg:flex items-center gap-6 text-sm">
           {nav.map(i => {
             const isExternal = i.href.startsWith('http');
+            if (i.children && i.children.length) {
+              return (
+                <div key={i.href} className="relative group">
+                  <Link href={i.href} className="px-2 py-1 rounded-md hover:bg-[var(--surface)]">{i.label}</Link>
+                  <div className="absolute left-0 top-full mt-1 hidden group-hover:block">
+                    <div className="rounded-md border border-[var(--border)] bg-white shadow-[0_10px_30px_rgba(2,8,23,0.06)] min-w-[180px] py-2">
+                      {i.children.map(c => (
+                        <Link key={c.href} href={c.href} className="block px-3 py-2 hover:bg-[var(--surface)]">{c.label}</Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )
+            }
             return (
               <Link
                 key={i.href}
@@ -53,7 +74,7 @@ export default function SiteHeader() {
           <div className="container mx-auto px-4 py-3 grid grid-cols-2 gap-2 text-sm">
             {nav.map(i => {
               const isExternal = i.href.startsWith('http');
-              return (
+              const Item = (
                 <Link
                   key={i.href}
                   href={i.href}
@@ -64,7 +85,22 @@ export default function SiteHeader() {
                 >
                   {i.label}
                 </Link>
-              )
+              );
+              if (i.children && i.children.length) {
+                return (
+                  <div key={i.href} className="col-span-2">
+                    {Item}
+                    <div className="mt-1 grid grid-cols-2 gap-2">
+                      {i.children.map(c => (
+                        <Link key={c.href} href={c.href} className="px-3 py-2 rounded-md hover:bg-[var(--surface)]" onClick={() => setOpen(false)}>
+                          {c.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )
+              }
+              return Item;
             })}
           </div>
         </div>
