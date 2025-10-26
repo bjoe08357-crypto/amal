@@ -20,7 +20,6 @@ const nav: NavItem[] = [
   },
   { href: '/roadmap', label: 'Roadmap' },
   { href: 'https://amalcoin.gitbook.io/amal-coin/', label: 'Whitepaper' },
-  { href: '/contact', label: 'Contact' },
 ]
 
 export default function SiteHeader() {

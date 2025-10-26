@@ -1,32 +1,9 @@
-"use client"
 import Section from '@/components/Section'
 import PageHeader from '@/components/PageHeader'
-import { Coins, Copy } from 'lucide-react'
-import { useState } from 'react'
+import { Coins } from 'lucide-react'
+import CopyableAddress from '@/components/CopyableAddress'
 
 export const metadata = { title: 'Token — AMAL', description: 'ERC‑20 utility, governance, and allocation' }
-
-function CopyableAddress({ address }: { address: string }) {
-  const [copied, setCopied] = useState(false)
-  const short = address.length > 20 ? `${address.slice(0, 10)}…${address.slice(-6)}` : address
-  async function onCopy() {
-    try {
-      await navigator.clipboard.writeText(address)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 1200)
-    } catch {}
-  }
-  return (
-    <button onClick={onCopy} className="w-full text-left">
-      <div className="flex items-center justify-between gap-3">
-        <span className="font-semibold break-all sm:break-normal">{short}</span>
-        <span className="inline-flex items-center gap-1 text-xs text-[#0F172A]/60">
-          <Copy className="w-3.5 h-3.5" /> {copied ? 'Copied' : 'Copy'}
-        </span>
-      </div>
-    </button>
-  )
-}
 
 export default function Page() {
   const allocation = [
